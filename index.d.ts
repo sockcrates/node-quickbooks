@@ -7,7 +7,7 @@
 export = node_quickbooks;
 
 declare class node_quickbooks {
-  constructor(consumerKey: string, consumerSecret: string, token: string, tokenSecret: string, realmId: string, useSandbox: boolean, debug: boolean, minorversion: any, oauthversion: string, refreshToken: string);
+  constructor(consumerKey: string, consumerSecret: string, token: string, tokenSecret: string, realmId: string, useSandbox: boolean, debug: boolean, minorversion: number | null, oauthversion: string, refreshToken: string);
 
   batch(items: any, callback: any): void;
 
