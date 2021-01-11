@@ -410,4 +410,3 @@ declare class node_quickbooks {
   static version: string;
 
 }
-
