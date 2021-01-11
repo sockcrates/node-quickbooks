@@ -11,7 +11,7 @@ declare class node_quickbooks {
     consumerKey: string,
     consumerSecret: string,
     token: string,
-    tokenSecret: string,
+    tokenSecret: boolean,
     realmId: string, useSandbox: boolean,
     debug: boolean,
     minorversion: number | null,
