@@ -49,7 +49,7 @@ declare class node_quickbooks {
   createInvoice(invoice: any, callback: any): void;
 
   createItem(
-    item: CreateItem,
+    item: ItemTemplate,
     callback: { (err: APIError, item: any): void },
   ): void;
 
@@ -541,7 +541,7 @@ interface APIError {
   type: string;
 }
 
-interface CreateItem {
+interface ItemTemplate {
   TrackQtyOnHand?: boolean;
   Name: string;
   QtyOnHand?: number;
@@ -561,7 +561,7 @@ interface CreateItem {
   };
 }
 
-interface Item extends CreateItem {
+interface Item extends ItemTemplate {
   FullyQualifiedName: string;
   domain: string;
   Id: string;
