@@ -48,7 +48,10 @@ declare class node_quickbooks {
 
   createInvoice(invoice: any, callback: any): void;
 
-  createItem(item: any, callback: any): void;
+  createItem(
+    item: CreateItem,
+    callback: { (err: any, item: any): void },
+  ): void;
 
   createJournalCode(journalCode: any, callback: any): void;
 
@@ -536,4 +539,57 @@ interface APIError {
   >
   time: string;
   type: string;
+}
+
+interface CreateItem {
+  TrackQtyOnHand?: boolean;
+  Name: string;
+  QtyOnHand?: number;
+  IncomeAccountRef?: {
+    name: string;
+    value: number;
+  };
+  AssetAccountRef?: {
+    name: string;
+    value: number;
+  };
+  InvStartDate?: string;
+  Type?: string;
+  ExpenseAccountRef?: {
+    name: string;
+    value: number;
+  };
+}
+
+interface Item extends CreateItem {
+  FullyQualifiedName: string;
+  domain: string;
+  Id: string;
+  Name: string;
+  TrackQtyOnHand: boolean;
+  UnitPrice: number;
+  PurchaseCost: number;
+  QtyOnHand: number;
+  IncomeAccountRef: {
+    name: string;
+    value: string;
+  },
+  AssetAccountRef: {
+    name: string;
+    value: string;
+  },
+  Taxable: boolean;
+  sparse: boolean;
+  Active: boolean;
+  SyncToken: string;
+  InvStartDate: string;
+  Type: string;
+  ExpenseAccountRef: {
+    name: string;
+    value: string;
+  },
+  MetaData: {
+    CreateTime: string;
+    LastUpdatedTime: string;
+  }
 }
