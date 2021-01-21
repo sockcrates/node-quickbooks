@@ -116,73 +116,175 @@ declare class node_quickbooks {
 
   disconnect(callback: any): void;
 
-  findAccounts(criteria: any, callback: any): void;
+  findAccounts(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findAttachables(criteria: any, callback: any): void;
+  findAttachables(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findBillPayments(criteria: any, callback: any): void;
+  findBillPayments(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findBills(criteria: any, callback: any): void;
+  findBills(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findBudgets(criteria: any, callback: any): void;
+  findBudgets(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findClasses(criteria: any, callback: any): void;
+  findClasses(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findCompanyInfos(criteria: any, callback: any): void;
+  findCompanyInfos(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findCreditMemos(criteria: any, callback: any): void;
+  findCreditMemos(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findCustomerTypes(criteria: any, callback: any): void;
+  findCustomerTypes(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findCustomers(criteria: any, callback: any): void;
+  findCustomers(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findDepartments(criteria: any, callback: any): void;
+  findDepartments(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findDeposits(criteria: any, callback: any): void;
+  findDeposits(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findEmployees(criteria: any, callback: any): void;
+  findEmployees(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findEstimates(criteria: any, callback: any): void;
+  findEstimates(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findExchangeRates(criteria: any, callback: any): void;
+  findExchangeRates(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findInvoices(criteria: any, callback: any): void;
+  findInvoices(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findItems(criteria: string | { [key: string]: string }, callback: any): void;
+  findItems(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findJournalCodes(criteria: any, callback: any): void;
+  findJournalCodes(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findJournalEntries(criteria: any, callback: any): void;
+  findJournalEntries(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findPaymentMethods(criteria: any, callback: any): void;
+  findPaymentMethods(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findPayments(criteria: any, callback: any): void;
+  findPayments(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findPreferenceses(criteria: any, callback: any): void;
+  findPreferenceses(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findPurchaseOrders(criteria: any, callback: any): void;
+  findPurchaseOrders(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findPurchases(criteria: any, callback: any): void;
+  findPurchases(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findRefundReceipts(criteria: any, callback: any): void;
+  findRefundReceipts(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findSalesReceipts(criteria: any, callback: any): void;
+  findSalesReceipts(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findTaxAgencies(criteria: any, callback: any): void;
+  findTaxAgencies(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findTaxCodes(criteria: any, callback: any): void;
+  findTaxCodes(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findTaxRates(criteria: any, callback: any): void;
+  findTaxRates(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findTerms(criteria: any, callback: any): void;
+  findTerms(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findTimeActivities(criteria: any, callback: any): void;
+  findTimeActivities(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findTransfers(criteria: any, callback: any): void;
+  findTransfers(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findVendorCredits(criteria: any, callback: any): void;
+  findVendorCredits(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
-  findVendors(criteria: any, callback: any): void;
+  findVendors(
+    criteria: string | { [key: string]: string } | undefined,
+    callback: { (err: any, res: any): void },
+  ): void;
 
   getAccount(id: any, callback: any): void;
 
