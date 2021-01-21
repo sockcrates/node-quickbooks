@@ -148,7 +148,7 @@ declare class node_quickbooks {
 
   findInvoices(criteria: any, callback: any): void;
 
-  findItems(criteria: any, callback: any): void;
+  findItems(criteria: string | { [key: string]: string }, callback: any): void;
 
   findJournalCodes(criteria: any, callback: any): void;
 
