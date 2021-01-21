@@ -572,11 +572,11 @@ interface Item extends CreateItem {
   QtyOnHand: number;
   IncomeAccountRef: {
     name: string;
-    value: string;
+    value: number;
   },
   AssetAccountRef: {
     name: string;
-    value: string;
+    value: number;
   },
   Taxable: boolean;
   sparse: boolean;
@@ -586,7 +586,7 @@ interface Item extends CreateItem {
   Type: string;
   ExpenseAccountRef: {
     name: string;
-    value: string;
+    value: number;
   },
   MetaData: {
     CreateTime: string;
