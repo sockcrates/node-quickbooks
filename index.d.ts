@@ -50,7 +50,7 @@ declare class node_quickbooks {
 
   createItem(
     item: CreateItem,
-    callback: { (err: any, item: any): void },
+    callback: { (err: APIError, item: any): void },
   ): void;
 
   createJournalCode(journalCode: any, callback: any): void;
