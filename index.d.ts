@@ -530,15 +530,18 @@ declare class node_quickbooks {
 }
 
 export interface APIError {
-  Fault: Array<
-    {
-      code: string;
-      Detail: string;
-      Message: string;
-    }
-  >
+  Fault: {
+    Error: Array<
+      {
+        code: string;
+        Detail: string;
+        element: string;
+        Message: string;
+      }
+    >;
+    type: string;
+  };
   time: string;
-  type: string;
 }
 
 export interface APIFindQuery {
