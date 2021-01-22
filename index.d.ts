@@ -541,6 +541,12 @@ interface APIError {
   type: string;
 }
 
+export interface APIFindQuery {
+  field: string;
+  value: string;
+  operator: string;
+}
+
 export interface ItemTemplate {
   TrackQtyOnHand?: boolean;
   Name: string;
@@ -561,7 +567,7 @@ export interface ItemTemplate {
   };
 }
 
-interface Item extends ItemTemplate {
+export interface Item extends ItemTemplate {
   FullyQualifiedName: string;
   domain: string;
   Id: string;
