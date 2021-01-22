@@ -547,6 +547,13 @@ export interface APIFindQuery {
   operator: string;
 }
 
+export interface APIQueryResponse<T> {
+  QueryResponse: {
+    [key: string]: Array<T>;
+  }
+  time: string;
+}
+
 export interface ItemTemplate {
   TrackQtyOnHand?: boolean;
   Name: string;
