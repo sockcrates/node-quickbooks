@@ -50,7 +50,7 @@ declare class node_quickbooks {
 
   createItem(
     item: ItemTemplate,
-    callback: { (err: APIError, item: any): void },
+    callback: { (err: APIError | Error, item: any): void },
   ): void;
 
   createJournalCode(journalCode: any, callback: any): void;
@@ -121,172 +121,172 @@ declare class node_quickbooks {
 
   findAccounts(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findAttachables(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findBillPayments(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findBills(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findBudgets(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findClasses(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findCompanyInfos(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findCreditMemos(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findCustomerTypes(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findCustomers(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findDepartments(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findDeposits(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findEmployees(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findEstimates(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findExchangeRates(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findInvoices(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findItems(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findJournalCodes(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findJournalEntries(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findPaymentMethods(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findPayments(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findPreferenceses(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findPurchaseOrders(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findPurchases(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findRefundReceipts(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findSalesReceipts(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findTaxAgencies(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findTaxCodes(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findTaxRates(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findTerms(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findTimeActivities(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findTransfers(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findVendorCredits(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   findVendors(
     criteria: string | APIFindQuery | Array<APIFindQuery> | undefined,
-    callback: { (err: APIError, res: any): void },
+    callback: { (err: APIError | Error, res: any): void },
   ): void;
 
   getAccount(id: any, callback: any): void;
