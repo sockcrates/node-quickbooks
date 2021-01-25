@@ -695,20 +695,95 @@ export interface Customer {
   Id: string;
 }
 
+export interface SalesItemLineDetail {
+  ItemRef?: {
+    name?: string;
+    value: string;
+  };
+  ClassRef?: {
+    name?: string;
+    value: string;
+  };
+  TaxCodeRef?: {
+    name?: string;
+    value: string;
+  };
+  MarkupInfo?: {
+    PriceLevelRef?: {
+      name?: string;
+      value: string;
+    };
+    Percent?: number;
+    MarkUpIncomeAccountRef?: {
+      name?: string;
+      value: string;
+    };
+    ItemAccountRef?: {
+      name?: string;
+      value: string;
+    };
+    ServiceDate?: string;
+    DiscountRate?: number;
+    UnitPrice?: number;
+    TaxClassificationRef?: {
+      name?: string;
+      value: string;
+    };
+  };
+}
+
 export interface InvoiceTemplate {
   Line: Array<
     {
-      DetailType: string;
+      DetailType: 'SalesItemLine';
       Amount: number;
-      SalesItemLineDetail: {
-        ItemRef: {
+      Description?: string;
+      LineNum?: number;
+      SalesItemLineDetail: SalesItemLineDetail;
+    } |
+    {
+      DetailType: 'GroupLineDetail';
+      Description?: string;
+      LineNum?: number;
+      GroupLineDetail: {
+        Amount?: number;
+        Description?: string;
+        LineNum?: number;
+        Quantity?: number;
+        Line?: Array<
+          {
+            DetailType: 'SalesItemLineDetail';
+            SalesItemLineDetail: Array<SalesItemLineDetail>;
+          }
+        >;
+        GroupItemRef?: {
           name?: string;
           value: string;
-        }
-      }
+        };
+      };
+    } |
+    {
+      DetailType: 'DescriptionOnly';
+      Description?: string;
+      LineNum?: number;
+      Amount?: number;
+      DescriptionLineDetail: {
+        TaxCodeRef?: {
+          name?: string;
+          value: string;
+        };
+        ServiceDate?: {
+          date: string;
+        };
+      };
     }
   >;
   CustomerRef: {
+    name?: string;
+    value: string;
+  };
+  CurrencyRef?: {
+    name?: string;
     value: string;
   };
 }
