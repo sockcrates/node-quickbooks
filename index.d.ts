@@ -823,31 +823,6 @@ export interface Invoice extends InvoiceTemplate {
   Deposit: 0;
   sparse: false;
   EmailStatus: string;
-  Line: Array<
-    {
-      LineNum: number;
-      Amount: number;
-      SalesItemLineDetail: {
-        TaxCodeRef: {
-          value: string;
-        };
-        ItemRef: {
-          name: string;
-          value: string;
-        }
-      };
-      Id: string;
-      DetailType: string;
-    }
-  >;
-  ApplyTaxAfterDiscount: false;
-  CustomField: Array<
-    {
-      DefinitionId: string;
-      Type: string;
-      Name: string;
-    }
-  >;
   Id: string;
   TxnTaxDetail: {
     TotalTax: number;
