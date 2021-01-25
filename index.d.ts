@@ -735,7 +735,7 @@ export interface SalesItemLineDetail {
 export interface InvoiceTemplate {
   Line: Array<
     {
-      DetailType: 'SalesItemLine';
+      DetailType: 'SalesItemLineDetail';
       Amount: number;
       Description?: string;
       LineNum?: number;
