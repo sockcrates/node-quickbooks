@@ -535,7 +535,7 @@ declare class node_quickbooks {
 
 }
 
-export interface APIError {
+export interface Fault {
   Fault: {
     Error: Array<
       {
