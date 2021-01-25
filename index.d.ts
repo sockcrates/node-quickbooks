@@ -49,7 +49,10 @@ declare class node_quickbooks {
 
   createEstimate(estimate: any, callback: any): void;
 
-  createInvoice(invoice: any, callback: any): void;
+  createInvoice(
+    invoice: InvoiceTemplate,
+    callback: { (err: any, invoice: Invoice): void },
+  ): void;
 
   createItem(
     item: ItemTemplate,
