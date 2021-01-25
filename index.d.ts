@@ -36,7 +36,10 @@ declare class node_quickbooks {
 
   createCreditMemo(creditMemo: any, callback: any): void;
 
-  createCustomer(customer: any, callback: any): void;
+  createCustomer(
+    customer: CustomerTemplate,
+    callback: { (err: any, customer: any): void },
+  ): void;
 
   createDepartment(department: any, callback: any): void;
 
@@ -166,7 +169,7 @@ declare class node_quickbooks {
 
   findCustomers(
     criteria: string | Array<APIFindQuery> | undefined,
-    callback: { (err: any, res: APIFindQueryResponse<any>): void },
+    callback: { (err: any, res: APIFindQueryResponse<Customer>): void },
   ): void;
 
   findDepartments(
