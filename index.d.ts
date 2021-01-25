@@ -609,3 +609,81 @@ export interface Item extends ItemTemplate {
     LastUpdatedTime: string;
   }
 }
+
+export interface CustomerTemplate {
+  FullyQualifiedName: string,
+  PrimaryEmailAddr: {
+    Address: string
+  },
+  DisplayName: string,
+  Suffix?: string,
+  Title: string,
+  MiddleName: string,
+  Notes?: string,
+  FamilyName: string,
+  PrimaryPhone: {
+    FreeFormNumber: string
+  },
+  CompanyName?: string,
+  BillAddr: {
+    CountrySubDivisionCode: string,
+    City: string,
+    PostalCode: string,
+    Line1: string,
+    Country: string
+  },
+  GivenName: string
+}
+
+export interface Customer {
+  domain: string,
+  FamilyName: string,
+  DisplayName: string,
+  DefaultTaxCodeRef: {
+    value: string
+  },
+  PrimaryEmailAddr: {
+    Address: string
+  },
+  PreferredDeliveryMethod: string,
+  GivenName: string,
+  FullyQualifiedName: string,
+  BillWithParent: boolean,
+  Job: boolean,
+  BalanceWithJobs: number,
+  PrimaryPhone: {
+    FreeFormNumber: string
+  },
+  Active: boolean,
+  MetaData: {
+    CreateTime: string,
+    LastUpdatedTime: string
+  },
+  BillAddr: {
+    City: string,
+    Line1: string,
+    PostalCode: string,
+    Lat: string,
+    Long: string,
+    CountrySubDivisionCode: string,
+    Id: string
+  },
+  MiddleName: string,
+  Notes: string,
+  Taxable: boolean,
+  Balance: number,
+  SyncToken: string,
+  CompanyName: string,
+  ShipAddr: {
+    City: string,
+    Line1: string,
+    PostalCode: string,
+    Lat: string,
+    Long: string,
+    CountrySubDivisionCode: string,
+    Id: string
+  },
+  PrintOnCheckName: string,
+  sparse: boolean,
+  Id: string
+}
