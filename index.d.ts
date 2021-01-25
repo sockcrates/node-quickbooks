@@ -691,3 +691,91 @@ export interface Customer {
   sparse: boolean;
   Id: string;
 }
+
+export interface InvoiceTemplate {
+  Line: Array<
+    {
+      DetailType: string;
+      Amount: number;
+      SalesItemLineDetail: {
+        ItemRef: {
+          name: string;
+          value: string;
+        }
+      }
+    }
+  >;
+  CustomerRef: {
+    value: string;
+  };
+}
+
+export interface Invoice extends InvoiceTemplate {
+  DocNumber: string;
+  SyncToken: string;
+  domain: string;
+  Balance: number;
+  BillAddr: {
+    City: string;
+    Line1: string;
+    PostalCode: string;
+    Lat: string;
+    Long: string;
+    CountrySubDivisionCode: string;
+    Id: string;
+  };
+  TxnDate: string;
+  TotalAmt: number;
+  CustomerRef: {
+    name: string;
+    value: string;
+  };
+  ShipAddr: {
+    City: string;
+    Line1: string;
+    PostalCode: string;
+    Lat: string;
+    Long: string;
+    CountrySubDivisionCode: string;
+    Id: string;
+  };
+  LinkedTxn: Array<any>;
+  DueDate: string;
+  PrintStatus: string;
+  Deposit: 0;
+  sparse: false;
+  EmailStatus: string;
+  Line: Array<
+    {
+      LineNum: number;
+      Amount: number;
+      SalesItemLineDetail: {
+        TaxCodeRef: {
+          value: string;
+        };
+        ItemRef: {
+          name: string;
+          value: string;
+        }
+      };
+      Id: string;
+      DetailType: string;
+    }
+  >;
+  ApplyTaxAfterDiscount: false;
+  CustomField: Array<
+    {
+      DefinitionId: string;
+      Type: string;
+      Name: string;
+    }
+  >;
+  Id: string;
+  TxnTaxDetail: {
+    TotalTax: number;
+  };
+  MetaData: {
+    CreateTime: string;
+    LastUpdatedTime: string;
+  }
+}
