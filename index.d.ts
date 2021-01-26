@@ -38,7 +38,7 @@ declare class node_quickbooks {
 
   createCustomer(
     customer: CustomerTemplate,
-    callback: { (err: any, customer: any): void },
+    callback: { (err: any, customer: Customer): void },
   ): void;
 
   createDepartment(department: any, callback: any): void;
