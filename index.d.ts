@@ -695,7 +695,7 @@ export interface Customer {
   Id: string;
 }
 
-export interface SalesItemLineDetail {
+export interface SalesItemLineDetailTemplate {
   ItemRef?: {
     name?: string;
     value: string;
@@ -737,7 +737,7 @@ export interface SalesItemLineTemplate {
   Amount: number;
   Description?: string;
   LineNum?: number;
-  SalesItemLineDetail: SalesItemLineDetail;
+  SalesItemLineDetail: SalesItemLineDetailTemplate;
 }
 
 export interface SalesItemLine extends Readonly<SalesItemLineTemplate> {
@@ -758,7 +758,7 @@ export interface GroupLineTemplate {
     Line?: Array<
       {
         DetailType: 'SalesItemLineDetail';
-        SalesItemLineDetail: Array<SalesItemLineDetail>;
+        SalesItemLineDetail: Array<SalesItemLineDetailTemplate>;
       }
     >;
     GroupItemRef?: {
