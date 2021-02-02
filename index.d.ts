@@ -732,6 +732,18 @@ export interface SalesItemLineDetailTemplate {
   };
 }
 
+export interface SalesItemLineDetail extends Readonly<SalesItemLineDetailTemplate> {
+  readonly Id: string;
+}
+
+export interface SalesItemLineTemplate {
+  DetailType: 'SalesItemLineDetail';
+  Amount: number;
+  Description?: string;
+  LineNum?: number;
+  SalesItemLineDetail: SalesItemLineDetailTemplate;
+}
+
 export interface SalesItemLineTemplate {
   DetailType: 'SalesItemLineDetail';
   Amount: number;
@@ -744,6 +756,7 @@ export interface SalesItemLine extends Readonly<SalesItemLineTemplate> {
   readonly Id: string;
   readonly Description: string;
   readonly LineNum: number;
+  readonly SalesItemLineDetail: SalesItemLineDetail;
 }
 
 export interface GroupLineTemplate {
