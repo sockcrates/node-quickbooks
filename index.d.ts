@@ -732,51 +732,76 @@ export interface SalesItemLineDetail {
   };
 }
 
+export interface SalesItemLineTemplate {
+  DetailType: 'SalesItemLineDetail';
+  Amount: number;
+  Description?: string;
+  LineNum?: number;
+  SalesItemLineDetail: SalesItemLineDetail;
+}
+
+export interface SalesItemLine extends Readonly<SalesItemLineTemplate> {
+  readonly Id: string;
+  readonly Description: string;
+  readonly LineNum: number;
+}
+
+export interface GroupLineTemplate {
+  DetailType: 'GroupLineDetail';
+  Description?: string;
+  LineNum?: number;
+  GroupLineDetail: {
+    Amount?: number;
+    Description?: string;
+    LineNum?: number;
+    Quantity?: number;
+    Line?: Array<
+      {
+        DetailType: 'SalesItemLineDetail';
+        SalesItemLineDetail: Array<SalesItemLineDetail>;
+      }
+    >;
+    GroupItemRef?: {
+      name?: string;
+      value: string;
+    };
+  };
+}
+
+export interface GroupLine extends Readonly<GroupLineTemplate> {
+  readonly Id: string;
+  readonly Description: string;
+  readonly LineNum: number;
+}
+
+export interface DescriptionLineTemplate {
+  DetailType: 'DescriptionOnly';
+  Description?: string;
+  LineNum?: number;
+  Amount?: number;
+  DescriptionLineDetail: {
+    TaxCodeRef?: {
+      name?: string;
+      value: string;
+    };
+    ServiceDate?: {
+      date: string;
+    };
+  };
+}
+
+export interface DescriptionLine extends Readonly<DescriptionLineTemplate> {
+  readonly Id: string;
+  readonly Description: string;
+  readonly LineNum: number;
+  readonly Amount: number;
+}
+
 export interface InvoiceTemplate {
   Line: Array<
-    {
-      DetailType: 'SalesItemLineDetail';
-      Amount: number;
-      Description?: string;
-      LineNum?: number;
-      SalesItemLineDetail: SalesItemLineDetail;
-    } |
-    {
-      DetailType: 'GroupLineDetail';
-      Description?: string;
-      LineNum?: number;
-      GroupLineDetail: {
-        Amount?: number;
-        Description?: string;
-        LineNum?: number;
-        Quantity?: number;
-        Line?: Array<
-          {
-            DetailType: 'SalesItemLineDetail';
-            SalesItemLineDetail: Array<SalesItemLineDetail>;
-          }
-        >;
-        GroupItemRef?: {
-          name?: string;
-          value: string;
-        };
-      };
-    } |
-    {
-      DetailType: 'DescriptionOnly';
-      Description?: string;
-      LineNum?: number;
-      Amount?: number;
-      DescriptionLineDetail: {
-        TaxCodeRef?: {
-          name?: string;
-          value: string;
-        };
-        ServiceDate?: {
-          date: string;
-        };
-      };
-    }
+    SalesItemLineTemplate |
+    GroupLineTemplate |
+    DescriptionLineTemplate
   >;
   CustomerRef: {
     name?: string;
