@@ -797,6 +797,40 @@ export interface DescriptionLine extends Readonly<DescriptionLineTemplate> {
   readonly Amount: number;
 }
 
+export interface DiscountLineDetailTemplate {
+  ClassRef?: {
+    value: string;
+    name?: string;
+  };
+  TaxCodeRef?: {
+    value: string;
+    name?: string;
+  };
+  DiscountAccountRef?: {
+    value: string;
+    name?: string;
+  };
+  PercentBased?: boolean;
+  DiscountPercent?: number;
+}
+
+export interface DiscountLineDetail extends Readonly<DiscountLineDetailTemplate> {
+  readonly Id: string;
+}
+
+export interface DiscountLineTemplate {
+  DiscountLineDetail: DiscountLineDetailTemplate;
+  DetailType: 'DiscountLineDetail';
+  Amount: number;
+  Description?: string;
+  LineNum?: string;
+}
+
+export interface DiscountLine extends Readonly<DiscountLineTemplate> {
+  readonly Id: string;
+  readonly DiscountLineDetail: DiscountLineDetail;
+}
+
 export interface InvoiceTemplate {
   Line: Array<
     SalesItemLineTemplate |
