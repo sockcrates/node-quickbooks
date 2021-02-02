@@ -855,5 +855,5 @@ export interface Invoice extends InvoiceTemplate {
   MetaData: {
     CreateTime: string;
     LastUpdatedTime: string;
-  }
+  };
 }
