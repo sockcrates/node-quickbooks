@@ -827,12 +827,14 @@ export interface DescriptionOnlyLineTemplate {
   };
 }
 
-export interface DescriptionOnlyLine extends Readonly<DescriptionOnlyLineTemplate> {
-  readonly Id: string;
-  readonly Description: string;
-  readonly LineNum: number;
-  readonly Amount: number;
+export interface DescriptionOnlyLineMut extends DescriptionOnlyLineTemplate {
+  Id: string;
+  Description: string;
+  LineNum: number;
+  Amount: number;
 }
+
+export interface DescriptionOnlyLine extends Readonly<Required<DescriptionOnlyLineMut>> { }
 
 export interface DiscountLineDetailTemplate {
   /** @todo ReferenceType interface */
