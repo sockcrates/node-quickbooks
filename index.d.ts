@@ -921,4 +921,5 @@ export interface Invoice extends InvoiceTemplate {
     CreateTime: string;
     LastUpdatedTime: string;
   };
+  readonly Line: Array<SalesItemLine | GroupLine | DescriptionOnlyLine | SubTotalLine>;
 }
