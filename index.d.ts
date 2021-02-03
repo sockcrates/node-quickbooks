@@ -867,10 +867,12 @@ export interface DiscountLineTemplate {
   LineNum?: string;
 }
 
-export interface DiscountLine extends Readonly<DiscountLineTemplate> {
-  readonly Id: string;
-  readonly DiscountLineDetail: DiscountLineDetail;
+export interface DiscountLineMut extends DiscountLineTemplate {
+  Id: string;
+  DiscountLineDetail: DiscountLineDetail;
 }
+
+export interface DiscountLine extends Readonly<Required<DiscountLineMut>> { }
 
 export interface SubTotalLineTemplate {
   SubtotalLineDetail: {
