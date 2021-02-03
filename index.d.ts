@@ -888,9 +888,11 @@ export interface SubTotalLineTemplate {
   LineNum?: number;
 }
 
-export interface SubTotalLine extends Readonly<SubTotalLineTemplate> {
-  readonly Id: string;
+export interface SubTotalLineMut extends SubTotalLineTemplate {
+  Id: string;
 }
+
+export interface SubTotalLine extends Readonly<Required<SubTotalLineMut>> { }
 
 export interface InvoiceTemplate {
   Line: Array<
