@@ -856,9 +856,11 @@ export interface DiscountLineDetailTemplate {
   DiscountPercent?: number;
 }
 
-export interface DiscountLineDetail extends Readonly<DiscountLineDetailTemplate> {
-  readonly Id: string;
+export interface DiscountLineDetailMut extends DiscountLineDetailTemplate {
+  Id: string;
 }
+
+export interface DiscountLineDetail extends Readonly<Required<DiscountLineDetailTemplate>> { }
 
 export interface DiscountLineTemplate {
   DiscountLineDetail: DiscountLineDetailTemplate;
