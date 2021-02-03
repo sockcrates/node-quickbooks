@@ -753,9 +753,11 @@ export interface SalesItemLineDetailTemplate {
   };
 }
 
-export interface SalesItemLineDetail extends Readonly<SalesItemLineDetailTemplate> {
-  readonly Id: string;
+export interface SalesItemLineDetailMut extends SalesItemLineDetailTemplate {
+  Id: string;
 }
+
+export interface SalesItemLineDetail extends Readonly<Required<SalesItemLineDetailMut>> { }
 
 export interface SalesItemLineTemplate {
   DetailType: 'SalesItemLineDetail';
