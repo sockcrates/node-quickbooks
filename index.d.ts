@@ -802,11 +802,13 @@ export interface GroupLineTemplate {
   };
 }
 
-export interface GroupLine extends Readonly<GroupLineTemplate> {
-  readonly Id: string;
-  readonly Description: string;
-  readonly LineNum: number;
+export interface GroupLineMut extends GroupLineTemplate {
+  Id: string;
+  Description: string;
+  LineNum: number;
 }
+
+export interface GroupLine extends Readonly<Required<GroupLineMut>> { }
 
 export interface DescriptionOnlyLineTemplate {
   DetailType: 'DescriptionOnly';
