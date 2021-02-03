@@ -923,3 +923,170 @@ export interface Invoice extends InvoiceTemplate {
   };
   readonly Line: Array<SalesItemLine | GroupLine | DescriptionOnlyLine | SubTotalLine>;
 }
+
+export interface SalesReceiptTemplate {
+  /** @todo ReferenceType interface */
+  CurrencyRef: {
+    value: string;
+    name?: string;
+  };
+  Line: Array<
+    SalesItemLineTemplate |
+    GroupLineTemplate |
+    DescriptionOnlyLineTemplate |
+    DiscountLineTemplate |
+    SubTotalLineTemplate
+  >;
+}
+
+export interface SalesReceiptMut extends SalesItemLineTemplate {
+  Id: string;
+  /** @todo ReferenceType interface */
+  CustomerRef: {
+    value: string;
+    name?: string;
+  };
+  Line: Array<SalesItemLine | GroupLine | DescriptionOnlyLine | DiscountLine | SubTotalLine>;
+  SyncToken: string;
+  BillEmail?: {
+    Address: string;
+  };
+  TxnDate?: string;
+  /** @todo PhysicalAddress interface */
+  ShipFromAddr?: any;
+  CustomField?: {
+    DefinitionId: string;
+    StringValue?: string;
+    Name?: string;
+    Type: 'StringType';
+  };
+  /** @todo DateTime interface */
+  ShipDate?: {
+    date: string;
+  };
+  TrackingNum?: string;
+  /** @todo ReferenceType interface */
+  ClassRef?: {
+    value: string;
+    name: string;
+  };
+  PrintStatus?: 'NotSet' | 'NeedToPrint' | 'PrintComplete';
+  PaymentRefNum?: string;
+  TxnSource?: string;
+  GlobalTaxCalculation?: 'TaxExcluded' | 'TaxInclusive' | 'NotApplicable';
+  TransactionLocationType?: 'WithinFrance' | 'FranceOverseas' | 'OutsideFranceWithEU' | 'OutsideEU';
+  ApplyTaxAfterDiscount?: boolean | null;
+  DocNumber?: string;
+  PrivateNote?: string;
+  /** @todo ReferenceType interface */
+  DepositToAccountRef?: {
+    value: string;
+    name?: string;
+  };
+  /** @todo MemoRef interface */
+  CustomerMemo?: {
+    value: string;
+  };
+  EmailStatus?: string;
+  /** @todo CreditCardPayment interface */
+  CreditCardPayment?: {
+    /** @todo CreditChargeResponse interface */
+    CreditChargeResponse?: {
+      Status?: 'Completed' | 'Unknown';
+      AuthCode?: string;
+      /** @todo TxnAuthorizationTime interface */
+      TxnAuthorizationTime?: {
+        dateTime: string;
+      };
+      CCTransId?: string;
+    };
+    /** @todo CreditChargeInfo interface */
+    CreditChargeInfo?: {
+      CcExpiryMonth?: number;
+      ProcessPayment?: boolean;
+      PostalCode?: string;
+      Amount?: number;
+      NameOnAcct?: string;
+      CcExpiryYear?: number;
+      Type?: string;
+      BillAddrStreet?: string;
+    };
+  };
+  TxnTaxDetail?: {
+    /** @todo ReferenceType interface */
+    TxnTaxCodeRef?: {
+      value: string;
+      name?: string;
+    };
+    TotalTax?: number;
+    TaxLine?: Array<
+      /** @todo TaxLine interface */
+      {
+        DetailType: 'TaxLineDetail',
+        /** @todo TaxLineDetail interface */
+        TaxLineDetail: {
+          /** @todo ReferenceType interface */
+          TaxRateRef: {
+            value: string;
+            name?: string;
+          }
+        };
+        NetAmountTaxable?: number;
+        PercentBased?: boolean;
+        TaxInclusiveAmount?: number;
+        OverrideDeltaAmount?: number;
+        TaxPercent?: number;
+        Amount?: number;
+      }
+    >;
+  };
+  /** @todo ReferenceType interface */
+  PaymentMethodRef?: {
+    value: string;
+    name?: string;
+  };
+  ExchangeRate?: number;
+  /** @todo PhysicalAddress interface */
+  ShipAddr?: any;
+  /** @todo ReferenceType interface */
+  DepartmentRef?: {
+    value: string;
+    name?: string;
+  };
+  /** @todo ReferenceType interface */
+  ShipMethodRef?: {
+    value: string;
+    name?: string;
+  };
+  /** @todo PhysicalAddress interface */
+  BillAddr?: any;
+  MetaData?: {
+    /** @todo DateTime interface */
+    CreateTime: {
+      dateTime: string;
+    };
+    /** @todo DateTime interface */
+    LastUpdatedTime: {
+      dateTime: string;
+    };
+  };
+  HomeBalance?: number;
+  /** @todo DeliveryInfo interface */
+  DeliveryInfo?: {
+    DeliveryType: 'Email';
+    /** @todo DateTime interface */
+    DeliveryTime: {
+      dateTime: string;
+    };
+  };
+  /** @todo ReferenceType interface */
+  RecurDataRef?: {
+    value: string;
+    name?: string;
+  };
+  TotalAmt?: number;
+  Balance?: number;
+  HomeTotalAmt?: number;
+}
+
+export interface SalesReceipt extends Readonly<Required<SalesReceiptMut>> { }
