@@ -844,11 +844,29 @@ export interface DiscountLine extends Readonly<DiscountLineTemplate> {
   readonly DiscountLineDetail: DiscountLineDetail;
 }
 
+export interface SubTotalLineTemplate {
+  SubtotalLineDetail: {
+    ItemRef?: {
+      value: string;
+      name?: string;
+    };
+  };
+  DetailType: 'SubtotalLineDetail';
+  Amount: number;
+  Description?: string;
+  LineNum?: number;
+}
+
+export interface SubTotalLine extends Readonly<SubTotalLineTemplate> {
+  readonly Id: string;
+}
+
 export interface InvoiceTemplate {
   Line: Array<
     SalesItemLineTemplate |
     GroupLineTemplate |
-    DescriptionOnlyLineTemplate
+    DescriptionOnlyLineTemplate |
+    SubTotalLineTemplate
   >;
   CustomerRef: {
     name?: string;
