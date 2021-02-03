@@ -787,7 +787,7 @@ export interface GroupLine extends Readonly<GroupLineTemplate> {
   readonly LineNum: number;
 }
 
-export interface DescriptionLineTemplate {
+export interface DescriptionOnlyLineTemplate {
   DetailType: 'DescriptionOnly';
   Description?: string;
   LineNum?: number;
@@ -803,7 +803,7 @@ export interface DescriptionLineTemplate {
   };
 }
 
-export interface DescriptionLine extends Readonly<DescriptionLineTemplate> {
+export interface DescriptionOnlyLine extends Readonly<DescriptionOnlyLineTemplate> {
   readonly Id: string;
   readonly Description: string;
   readonly LineNum: number;
@@ -848,7 +848,7 @@ export interface InvoiceTemplate {
   Line: Array<
     SalesItemLineTemplate |
     GroupLineTemplate |
-    DescriptionLineTemplate
+    DescriptionOnlyLineTemplate
   >;
   CustomerRef: {
     name?: string;
