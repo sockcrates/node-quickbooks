@@ -73,7 +73,10 @@ declare class node_quickbooks {
 
   createRefundReceipt(refundReceipt: any, callback: any): void;
 
-  createSalesReceipt(salesReceipt: any, callback: any): void;
+  createSalesReceipt(
+    salesReceipt: SalesReceiptTemplate,
+    callback: { (err: any, invoice: SalesReceipt): void },
+  ): void;
 
   createTaxAgency(taxAgency: any, callback: any): void;
 
@@ -252,7 +255,7 @@ declare class node_quickbooks {
 
   findSalesReceipts(
     criteria: string | Array<FindQuery> | undefined,
-    callback: { (err: any, res: FindResponse<string, any>): void },
+    callback: { (err: any, res: FindResponse<string, SalesReceipt>): void },
   ): void;
 
   findTaxAgencies(
