@@ -892,8 +892,8 @@ export interface Invoice extends InvoiceTemplate {
   LinkedTxn: Array<any>;
   DueDate: string;
   PrintStatus: string;
-  Deposit: 0;
-  sparse: false;
+  Deposit: number;
+  sparse: boolean;
   EmailStatus: string;
   Id: string;
   TxnTaxDetail: {
