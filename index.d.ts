@@ -707,6 +707,8 @@ export interface CustomerMut extends CustomerTemplate {
   Id: string;
 }
 
+export interface Customer extends Readonly<Required<CustomerMut>> { }
+
 export interface SalesItemLineDetailTemplate {
   /** @todo ReferenceType interface */
   ItemRef?: {
