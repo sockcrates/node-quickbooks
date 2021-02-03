@@ -653,7 +653,7 @@ export interface CustomerTemplate {
   GivenName: string;
 }
 
-export interface CustomerMut {
+export interface CustomerMut extends CustomerTemplate {
   domain: string;
   FamilyName: string;
   DisplayName: string;
@@ -679,6 +679,7 @@ export interface CustomerMut {
   };
   BillAddr: {
     City: string;
+    Country: string;
     Line1: string;
     PostalCode: string;
     Lat: string;
