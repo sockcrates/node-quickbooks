@@ -590,7 +590,7 @@ export interface ItemTemplate {
   };
 }
 
-export interface Item extends ItemTemplate {
+export interface ItemMut extends ItemTemplate {
   FullyQualifiedName: string;
   domain: string;
   Id: string;
@@ -625,6 +625,8 @@ export interface Item extends ItemTemplate {
     LastUpdatedTime: string;
   }
 }
+
+export interface Item extends Readonly<Required<ItemMut>> { }
 
 export interface CustomerTemplate {
   FullyQualifiedName: string;
