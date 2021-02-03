@@ -568,16 +568,19 @@ export interface ItemTemplate {
   TrackQtyOnHand?: boolean;
   Name: string;
   QtyOnHand?: number;
+  /** @todo ReferenceType interface */
   IncomeAccountRef?: {
     name?: string;
     value: number;
   };
+  /** @todo ReferenceType interface */
   AssetAccountRef?: {
     name?: string;
     value: number;
   };
   InvStartDate?: string;
   Type?: string;
+  /** @todo ReferenceType interface */
   ExpenseAccountRef?: {
     name?: string;
     value: number;
@@ -593,10 +596,12 @@ export interface Item extends ItemTemplate {
   UnitPrice: number;
   PurchaseCost: number;
   QtyOnHand: number;
+  /** @todo ReferenceType interface */
   IncomeAccountRef: {
     name: string;
     value: number;
   };
+  /** @todo ReferenceType interface */
   AssetAccountRef: {
     name: string;
     value: number;
@@ -607,6 +612,7 @@ export interface Item extends ItemTemplate {
   SyncToken: string;
   InvStartDate: string;
   Type: string;
+  /** @todo ReferenceType interface */
   ExpenseAccountRef: {
     name: string;
     value: number;
@@ -696,28 +702,34 @@ export interface Customer {
 }
 
 export interface SalesItemLineDetailTemplate {
+  /** @todo ReferenceType interface */
   ItemRef?: {
     name?: string;
     value: string;
   };
+  /** @todo ReferenceType interface */
   ClassRef?: {
     name?: string;
     value: string;
   };
+  /** @todo ReferenceType interface */
   TaxCodeRef?: {
     name?: string;
     value: string;
   };
   MarkupInfo?: {
+    /** @todo ReferenceType interface */
     PriceLevelRef?: {
       name?: string;
       value: string;
     };
     Percent?: number;
+    /** @todo ReferenceType interface */
     MarkUpIncomeAccountRef?: {
       name?: string;
       value: string;
     };
+    /** @todo ReferenceType interface */
     ItemAccountRef?: {
       name?: string;
       value: string;
@@ -725,6 +737,7 @@ export interface SalesItemLineDetailTemplate {
     ServiceDate?: string;
     DiscountRate?: number;
     UnitPrice?: number;
+    /** @todo ReferenceType interface */
     TaxClassificationRef?: {
       name?: string;
       value: string;
@@ -774,6 +787,7 @@ export interface GroupLineTemplate {
         SalesItemLineDetail: Array<SalesItemLineDetailTemplate>;
       }
     >;
+    /** @todo ReferenceType interface */
     GroupItemRef?: {
       name?: string;
       value: string;
@@ -793,6 +807,7 @@ export interface DescriptionOnlyLineTemplate {
   LineNum?: number;
   Amount?: number;
   DescriptionLineDetail: {
+    /** @todo ReferenceType interface */
     TaxCodeRef?: {
       name?: string;
       value: string;
@@ -811,14 +826,17 @@ export interface DescriptionOnlyLine extends Readonly<DescriptionOnlyLineTemplat
 }
 
 export interface DiscountLineDetailTemplate {
+  /** @todo ReferenceType interface */
   ClassRef?: {
     value: string;
     name?: string;
   };
+  /** @todo ReferenceType interface */
   TaxCodeRef?: {
     value: string;
     name?: string;
   };
+  /** @todo ReferenceType interface */
   DiscountAccountRef?: {
     value: string;
     name?: string;
@@ -846,6 +864,7 @@ export interface DiscountLine extends Readonly<DiscountLineTemplate> {
 
 export interface SubTotalLineTemplate {
   SubtotalLineDetail: {
+    /** @todo ReferenceType interface */
     ItemRef?: {
       value: string;
       name?: string;
@@ -868,10 +887,12 @@ export interface InvoiceTemplate {
     DescriptionOnlyLineTemplate |
     SubTotalLineTemplate
   >;
+  /** @todo ReferenceType interface */
   CustomerRef: {
     name?: string;
     value: string;
   };
+  /** @todo ReferenceType interface */
   CurrencyRef?: {
     name?: string;
     value: string;
@@ -894,6 +915,7 @@ export interface Invoice extends InvoiceTemplate {
   };
   TxnDate: string;
   TotalAmt: number;
+  /** @todo ReferenceType interface */
   CustomerRef: {
     name: string;
     value: string;
