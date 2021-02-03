@@ -651,7 +651,7 @@ export interface CustomerTemplate {
   GivenName: string;
 }
 
-export interface Customer {
+export interface CustomerMut {
   domain: string;
   FamilyName: string;
   DisplayName: string;
@@ -747,6 +747,8 @@ export interface SalesItemLineDetailTemplate {
     };
   };
 }
+
+export interface Customer extends Readonly<Required<CustomerMut>> { }
 
 export interface SalesItemLineDetail extends Readonly<SalesItemLineDetailTemplate> {
   readonly Id: string;
