@@ -767,20 +767,14 @@ export interface SalesItemLineTemplate {
   SalesItemLineDetail: SalesItemLineDetailTemplate;
 }
 
-export interface SalesItemLineTemplate {
-  DetailType: 'SalesItemLineDetail';
-  Amount: number;
-  Description?: string;
-  LineNum?: number;
-  SalesItemLineDetail: SalesItemLineDetailTemplate;
+export interface SalesItemLineMut extends SalesItemLineTemplate {
+  Id: string;
+  Description: string;
+  LineNum: number;
+  SalesItemLineDetail: SalesItemLineDetail;
 }
 
-export interface SalesItemLine extends Readonly<SalesItemLineTemplate> {
-  readonly Id: string;
-  readonly Description: string;
-  readonly LineNum: number;
-  readonly SalesItemLineDetail: SalesItemLineDetail;
-}
+export interface SalesItemLine extends Readonly<Required<SalesItemLineMut>> { }
 
 export interface GroupLineTemplate {
   DetailType: 'GroupLineDetail';
