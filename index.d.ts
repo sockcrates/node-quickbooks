@@ -753,8 +753,6 @@ export interface SalesItemLineDetailTemplate {
   };
 }
 
-export interface Customer extends Readonly<Required<CustomerMut>> { }
-
 export interface SalesItemLineDetail extends Readonly<SalesItemLineDetailTemplate> {
   readonly Id: string;
 }
