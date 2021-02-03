@@ -913,7 +913,7 @@ export interface InvoiceTemplate {
   };
 }
 
-export interface Invoice extends InvoiceTemplate {
+export interface InvoiceMut extends InvoiceTemplate {
   DocNumber: string;
   SyncToken: string;
   domain: string;
@@ -957,8 +957,10 @@ export interface Invoice extends InvoiceTemplate {
     CreateTime: string;
     LastUpdatedTime: string;
   };
-  readonly Line: Array<SalesItemLine | GroupLine | DescriptionOnlyLine | SubTotalLine>;
+  Line: Array<SalesItemLine | GroupLine | DescriptionOnlyLine | SubTotalLine>;
 }
+
+export interface Invoice extends Readonly<Required<InvoiceMut>> { }
 
 export interface SalesReceiptTemplate {
   /** @todo ReferenceType interface */
