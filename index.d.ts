@@ -1033,6 +1033,12 @@ export interface InvoiceMut extends InvoiceTemplate {
 
 export interface Invoice extends Readonly<Required<InvoiceMut>> { }
 
+/**
+ * Does not work. Adding it to the system returns an API error:
+ * ```
+ * System Failure Error: com.intuit.schema.finance.v3.RecurringInfo cannot be cast to com.intuit.schema.finance.v3.IntuitEntity
+ * ```
+ */
 export interface RecurringTransactionTemplate {
   RecurringInfo: {
     RecurType?: string;
@@ -1072,6 +1078,12 @@ export interface RecurringTransactionTemplate {
   };
 }
 
+/**
+ * Does not work. Adding it to the system returns an API error:
+ * ```
+ * System Failure Error: com.intuit.schema.finance.v3.RecurringInfo cannot be cast to com.intuit.schema.finance.v3.IntuitEntity
+ * ```
+ */
 export interface RecurringTransactionMut extends RecurringTransactionTemplate {
   Id: string;
   SyncToken: string;
@@ -1106,6 +1118,12 @@ export interface RecurringTransactionMut extends RecurringTransactionTemplate {
   'PurchaseOffer';
 }
 
+/**
+ * Does not work. Adding it to the system returns an API error:
+ * ```
+ * System Failure Error: com.intuit.schema.finance.v3.RecurringInfo cannot be cast to com.intuit.schema.finance.v3.IntuitEntity
+ * ```
+ */
 export interface RecurringTransaction extends Readonly<Required<RecurringTransactionMut>> { }
 
 export interface SalesReceiptTemplate {
