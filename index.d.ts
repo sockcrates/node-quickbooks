@@ -603,6 +603,40 @@ export interface FindResponse<K extends string, T> {
   time: string;
 }
 
+/**
+ * Use this in the ```createItem``` function to create a QuickBooks Item.
+ * More information can be found in the [QuickBooks Online API reference](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/most-commonly-used/item#create-an-item).
+ * 
+ * ## Example
+ * Creating a "Service" item.
+ * ```ts
+ * function createService(quickbooks: node_quickbooks, itemName: string, expenseAccountID: number, incomeAccountID: number): void {
+ *   const item: ItemTemplate = {
+ *     ExpenseAccountRef: {
+ *       value: expenseAccountID,
+ *     },
+ *     IncomeAccountRef: {
+ *       value: incomeAccountID,
+ *     },
+ *     Name: itemName,
+ *     Type: 'Service',
+ *   };
+ * 
+ *   quickbooks.createItem(
+ *     item,
+ *     (err: any, res: Item) => {
+ *       if (err) {
+ *         // Something is wrong.
+ *         console.error(err);
+ *         throw err;
+ *       }
+ * 
+ *       console.log(res);
+ *     },
+ *   );
+ * }
+ * ```
+ */
 export interface ItemTemplate {
   TrackQtyOnHand?: boolean;
   Name: string;
