@@ -559,6 +559,29 @@ export interface FindQuery {
   operator: string;
 }
 
+/**
+ * The second argument in the callback function of ```find*``` functions
+ * in this module.
+ * 
+ * ## Example
+ * 
+ * The following object satisfies ```FindResponse<'Foo', boolean>```.
+ * 
+ * ```JSON
+ * {
+ *   "QueryResponse": {
+ *     "Foo": [
+ *       true,
+ *       false,
+ *       false,
+ *     ],
+ *     "maxResults": 100,
+ *     "startPosition": 1,
+ *   },
+ *   "time": "2014-09-16T14:59:48-07:00",
+ * }
+ * ```
+ */
 export interface FindResponse<K extends string, T> {
   QueryResponse: Record<K, Array<T>> & {
     maxResults: number;
