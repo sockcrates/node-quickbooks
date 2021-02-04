@@ -563,8 +563,21 @@ export interface FindQuery {
  * The second argument in the callback function of ```find*``` functions
  * in this module.
  * 
- * ## Example
+ * ## Example 1
+ * Using an object that implements ```FindResponse<'Item', Item>```.
  * 
+ * ```ts
+ * function unwrap(err: any, res: FindResponse<'Item', Item>): Array<Item> {
+ *   if (err) {
+ *     // Error occured, no items are returned.
+ *     throw new Error('No items found!');
+ *   }
+ * 
+ *   return FindResponse.Item;
+ * }
+ * ```
+ * 
+ * ## Example 2
  * The following object satisfies ```FindResponse<'Foo', boolean>```.
  * 
  * ```JSON
