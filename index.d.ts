@@ -1033,6 +1033,81 @@ export interface InvoiceMut extends InvoiceTemplate {
 
 export interface Invoice extends Readonly<Required<InvoiceMut>> { }
 
+export interface RecurringTransactionTemplate {
+  RecurringInfo: {
+    RecurType?: string;
+    ScheduleInfo?: {
+      DayOfWeek?: string;
+      /** @todo DateTime interface */
+      StartDate?: {
+        dateTime: string;
+      };
+      MaxOccurrences?: string;
+      RemindDays?: string;
+      IntervalType?:
+      'Yearly' |
+      'Monthly' |
+      'Weekly' |
+      'Daily';
+      WeekOfMonth?: string;
+      MonthOfYear?: string;
+      DaysBefore?: string;
+      /** @todo DateTime interface */
+      NextDate?: {
+        dateTime: string;
+      };
+      NumInterval?: string;
+      /** @todo DateTime interface */
+      EndDate?: {
+        dateTime: string;
+      };
+      /** @todo DateTime interface */
+      PreviousDate?: {
+        dateTime: string;
+      };
+      DayOfMonth?: string;
+    };
+    Name?: string;
+    Active: boolean;
+  };
+}
+
+export interface RecurringTransactionMut extends RecurringTransactionTemplate {
+  Id: string;
+  SyncToken: string;
+  /** @todo ReferenceType interface */
+  RecurDateRef?: {
+    value: string;
+    name?: string;
+  };
+  /** @todo MetaData interface */
+  MetaData?: {
+    /** @todo DateTime interface */
+    CreateTime: {
+      dateTime: string;
+    };
+    /** @todo DateTime interface */
+    LastUpdatedTime: {
+      dateTime: string;
+    };
+  };
+  Type:
+  'Bill' |
+  'Purchase' |
+  'CreditMemo' |
+  'Deposit' |
+  'Estimate' |
+  'Invoice' |
+  'JournalEntry' |
+  'RefundReceipt' |
+  'SalesReceipt' |
+  'Transfer' |
+  'VendorCredit' |
+  'PurchaseOffer';
+}
+
+export interface RecurringTransaction extends Readonly<Required<RecurringTransactionMut>> { }
+
 export interface SalesReceiptTemplate {
   /** @todo ReferenceType interface */
   CurrencyRef?: {
@@ -1169,6 +1244,7 @@ export interface SalesReceiptMut extends SalesItemLineTemplate {
   };
   /** @todo PhysicalAddress interface */
   BillAddr?: any;
+  /** @todo MetaData interface */
   MetaData?: {
     /** @todo DateTime interface */
     CreateTime: {
