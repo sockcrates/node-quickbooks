@@ -580,7 +580,7 @@ export interface FindQuery {
  * ## Example 2
  * The following object satisfies ```FindResponse<'Foo', boolean>```.
  * 
- * ```JSON
+ * ```json
  * {
  *   "QueryResponse": {
  *     "Foo": [
