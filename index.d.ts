@@ -570,10 +570,10 @@ export interface FindQuery {
  * function unwrap(err: any, res: FindResponse<'Item', Item>): Array<Item> {
  *   if (err) {
  *     // Error occured, no items are returned.
- *     throw new Error('No items found!');
+ *     throw new Error('can not retrieve items');
  *   }
  * 
- *   return FindResponse.Item;
+ *   return res.Item;
  * }
  * ```
  * 
