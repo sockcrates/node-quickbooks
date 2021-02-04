@@ -602,7 +602,7 @@ export interface FindResponse<K extends string, T> {
 }
 
 /**
- * Use this in the ```createItem``` function to create a QuickBooks Item.
+ * Use this in the ```createItem``` function to create a QuickBooks Online Item.
  * More information can be found in the [QuickBooks Online API reference](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/most-commonly-used/item#create-an-item).
  * 
  * ## Example
@@ -694,6 +694,9 @@ export interface ItemMut extends ItemTemplate {
   }
 }
 
+/**
+ * Describes an Item and all fields that can be returned from the QuickBooks Online API.
+ */
 export interface Item extends Readonly<Required<ItemMut>> { }
 
 export interface CustomerTemplate {
