@@ -565,7 +565,6 @@ export interface FindQuery {
  * 
  * ## Example 1
  * Using an object that implements ```FindResponse<'Item', Item>```.
- * 
  * ```ts
  * function unwrap(err: any, res: FindResponse<'Item', Item>): Array<Item> {
  *   if (err) {
@@ -579,7 +578,6 @@ export interface FindQuery {
  * 
  * ## Example 2
  * The following object satisfies ```FindResponse<'Foo', boolean>```.
- * 
  * ```json
  * {
  *   "QueryResponse": {
