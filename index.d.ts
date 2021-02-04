@@ -1035,7 +1035,7 @@ export interface Invoice extends Readonly<Required<InvoiceMut>> { }
 
 export interface SalesReceiptTemplate {
   /** @todo ReferenceType interface */
-  CurrencyRef: {
+  CurrencyRef?: {
     value: string;
     name?: string;
   };
