@@ -468,7 +468,10 @@ declare class node_quickbooks {
 
   updateExchangeRate(exchangeRate: any, callback: any): void;
 
-  updateInvoice(invoice: any, callback: any): void;
+  updateInvoice(
+    invoice: InvoiceMut,
+    callback: { (err: any, invoice: Invoice): void },
+  ): void;
 
   updateItem(item: any, callback: any): void;
 
